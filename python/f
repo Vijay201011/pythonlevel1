@@ -1,0 +1,32 @@
+import tkinter as tk
+from tkinter import messagebox
+
+def show_custom_message():
+    # Create a new window for the custom message box
+    top = tk.Toplevel()
+    top.title("Custom Message Box")
+    
+    # Set the dimensions of the new window
+    top.geometry("300x150")
+
+    # Add a label in the custom message box
+    label = tk.Label(top, text="This is a custom message box!", font=("Arial", 14))
+    label.pack(pady=20)
+
+    # Function that closes the window when the button is clicked
+    def close_window():
+        top.destroy()
+
+    # Add a button in the custom message box
+    button = tk.Button(top, text="Close", command=close_window)
+    button.pack()
+
+# Main window
+root = tk.Tk()
+root.geometry("300x200")
+
+# Add a button to show the custom message box
+button = tk.Button(root, text="Show Custom Message Box", command=show_custom_message)
+button.pack(pady=50)
+
+root.mainloop()
